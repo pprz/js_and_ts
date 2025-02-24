@@ -213,3 +213,28 @@ pA
     .finally(() => {
         console.log("Finally block executed"); // 输出: Finally block executed
     });
+
+
+// yield
+// 什么是生成器函数yield？
+// 生成器函数 是一种特殊的函数，使用 function* 定义。
+// 它可以暂停执行并返回一个值，稍后可以从暂停的地方继续执行。
+// 调用生成器函数不会立即执行函数体，而是返回一个 生成器对象（Generator Object） ，该对象实现了 迭代器协议 。
+function* generatorFunction() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+const generator = generatorFunction();
+console.log(generator.next().value); // 输出: 1
+console.log(generator.next().value); // 输出: 2
+console.log(generator.next().value); // 输出: 3
+
+// 常用场景
+// 实现迭代器 ：轻松创建可迭代对象。
+// 异步编程 ：早期用于模拟 async/await。
+// 惰性求值 ：处理大数据集或无限序列。
+// 控制流管理 ：实现状态机、任务调度等。
+// 数据流处理 ：逐行读取文件或处理网络请求。
+// 尽管现代 JavaScript 提供了更简洁的工具（如 async/await），但backstage的某些场景中推荐使用yield，我们项目code base里也有相关代码，了解即可。

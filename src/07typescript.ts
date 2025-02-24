@@ -20,4 +20,5 @@
 
 // TS中有哪些特殊符号，分别是什么意思
 
-// TS常见的工具类型有哪些
+// TS常见的工具类型有哪些 （code review中经常被要求不能使用any，特别是测试用例中非常实用）
+// Partical Required Pick Omit Record Readonly等
